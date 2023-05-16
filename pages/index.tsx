@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import axios from 'axios';
 
 export default function Home() {
@@ -34,9 +34,9 @@ export default function Home() {
 
 
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
 
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     // Add the user's message to the messages array
     setMessages([...messages, { type: 'user', content: input }]);
     
